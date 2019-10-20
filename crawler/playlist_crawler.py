@@ -1,7 +1,7 @@
 from crawler import Crawler
 
 
-class PlaylistService(Crawler):
+class PlaylistCrawler(Crawler):
 
     def get_videos(self):
         result = Crawler().videos_data_from_playlist(self.params)
