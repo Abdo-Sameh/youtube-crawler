@@ -14,7 +14,7 @@ class Crawler:
     def __init__(self, params=None):
         if params is None:
             params = {}
-        self.params = {'part': 'snippet', 'maxResults': 5}
+        self.params = {'part': 'snippet', 'maxResults': 2, 'key': os.getenv('API_KEY')}
         self.params.update(params)
 
     def videos_data_from_playlist(self, params):
