@@ -1,9 +1,17 @@
 from crawler import *
 
 
-class ChannelCrawler(Crawler):
+class ChannelCrawler:
 
-    def get_videos(self):
-        result = Crawler().videos_data_from_channel(self.params)
-        videos = result['items']
-        return videos
+    def __init__(self, params=None):
+        if params is None:
+            params = {}
+        self.params = {'part': 'snippet', 'maxResults': 1}
+        self.params.update(params)
+
+    def get_playlists(self):
+        result = Crawler(self.params).get_playlists_from_channel()
+        playlists = []
+        for i in range(len(result['items'])):
+            playlists += result['items'][i][id]
+        return playlists
