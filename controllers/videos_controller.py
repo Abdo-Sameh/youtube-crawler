@@ -1,5 +1,3 @@
-from sqlalchemy.testing import db
-
 from crawler.video_crawler import VideoCrawler
 from models.video import *
 
@@ -15,13 +13,13 @@ class VideosController:
 
     def save_data(self):
         for i in range(len(self.items)):
+            more_info = self.get_details(self.items[i]['snippet']['resourceId']['videoId'])
             new_video = Video(
                 video_url='https://www.youtube.com/watch?v=' + self.items[i]['snippet']['resourceId']['videoId'],
                 title=self.items[i]['snippet']['title'],
                 thumbnail_url=self.items[i]['snippet']['thumbnails']['default']['url'],
                 full_image_url=self.items[i]['snippet']['thumbnails']['standard']['url']
             )
-            more_info = self.get_details(self.items[i]['snippet']['resourceId']['videoId'])
             new_video.duration = more_info['duration']
             new_video.views = more_info['view_count']
             new_video.downloaded_thumbnail_path = ''
