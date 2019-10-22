@@ -8,8 +8,8 @@ class VideosController:
 
     def get_details(self, videoId):
         data = VideoCrawler({'id': videoId}).get_video_details()
-        return {'duration': data['items'][0]['contentDetails']['duration'],
-                'view_count': data['items'][0]['statistics']['viewCount']}
+        return {'duration': data[0]['contentDetails']['duration'],
+                'view_count': data[0]['statistics']['viewCount']}
 
     def download_image(self, url, video_id):
         download_path = 'images/' + video_id
