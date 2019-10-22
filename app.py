@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from crawler.channel_crawler import *
 from crawler.playlist_crawler import *
-from cron_schedule import run_task
+from cron_schedule import *
 load_dotenv(find_dotenv())
 app = Flask(__name__)
 
