@@ -23,3 +23,5 @@ To run flask app ```FLASK_APP=app.py flask run```
 | ------ | --------- |----------        |
 | Get    | /playlist | ```playlistId``` | 
 | Get    | /channel  | ```channelId```  |
+
+***Note***: To run cron job just run ```python cron_schedule.py```
