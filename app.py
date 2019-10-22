@@ -1,14 +1,20 @@
+from dotenv import load_dotenv, find_dotenv
 from flask import request, jsonify, Flask
+# import logging
 from flask_sqlalchemy import SQLAlchemy
 
 from crawler.channel_crawler import *
 from crawler.playlist_crawler import *
-
+from cron_schedule import run_task
+load_dotenv(find_dotenv())
 app = Flask(__name__)
 
 app.config.from_object(os.getenv('APP_SETTINGS'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+# logging.basicConfig(filename='demo.log', level=logging.DEBUG)
+
 
 from controllers.videos_controller import VideosController
 
@@ -36,4 +42,5 @@ def get_videos_info_from_channel():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    run_task()
+    app.run(debug=True, use_reloader=False)

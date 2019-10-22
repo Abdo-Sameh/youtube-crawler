@@ -1,7 +1,4 @@
-import os
-import requests
-
-from crawler.video_crawler import VideoCrawler
+from crawler.video_crawler import *
 from models.video import *
 
 

@@ -11,4 +11,4 @@ class VideoCrawler:
 
     def get_video_details(self):
         result = Crawler(self.params).get_video_data()
-        return result
+        return result['items']
