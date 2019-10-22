@@ -12,7 +12,6 @@ class ChannelCrawler:
     def get_playlists(self):
         result = Crawler(self.params).get_playlists_from_channel()
         playlists = []
-        print result
         for i in range(len(result['items'])):
             playlists += [result['items'][i]['id']]
         return playlists

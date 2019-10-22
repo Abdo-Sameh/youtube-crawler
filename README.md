@@ -13,4 +13,13 @@
 ### Setting up database
 * Create a database through this command ```sudo -u [name_of_user] createdb [name_of_database]```, then change database URL from ```.env```
 file.
-* run ```python manage.py db init``` to create migration
+* run ```python manage.py db upgrade``` to build database and migrate.
+
+### Running
+To run flask app ```FLASK_APP=app.py flask run```
+
+### How to use
+| Method |    URL    |  Params          |
+| ------ | --------- |----------        |
+| Get    | /playlist | ```playlistId``` | 
+| Get    | /channel  | ```channelId```  |
