@@ -1,8 +1,7 @@
-from dotenv import load_dotenv, find_dotenv
 from flask import request, jsonify, Flask
 # import logging
 from flask_sqlalchemy import SQLAlchemy
-
+from dotenv import load_dotenv, find_dotenv
 from crawler.channel_crawler import *
 from crawler.playlist_crawler import *
 from cron_schedule import *
