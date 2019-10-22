@@ -41,5 +41,4 @@ def get_videos_info_from_channel():
 
 
 if __name__ == '__main__':
-    run_task()
     app.run(debug=True, use_reloader=False)
