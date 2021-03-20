@@ -13,7 +13,7 @@ Foundations==2.1.0
 idna==2.8
 imagesize==1.1.0
 itsdangerous==1.1.0
-Jinja2==2.10.3
+Jinja2==2.11.3
 linecache2==1.0.0
 Mako==1.1.0
 Manager==2.0.5
