@@ -15,7 +15,7 @@ imagesize==1.1.0
 itsdangerous==1.1.0
 Jinja2==2.10.3
 linecache2==1.0.0
-Mako==1.1.0
+Mako==1.2.2
 Manager==2.0.5
 MarkupSafe==1.1.1
 migrate==0.3.8
